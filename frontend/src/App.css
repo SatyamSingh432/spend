@@ -1,0 +1,244 @@
+/* App.css — styles for Student-Teacher App */
+
+/* Reset-ish */
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #09377b81 0%, #ffffff 100%);
+  color: #1f2937;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 20px;
+}
+
+/* Nav */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+nav h1 {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: -0.2px;
+  color: #0f172a;
+}
+
+/* Role Switcher */
+.role-switcher {
+  display: inline-flex;
+  gap: 8px;
+  background: #ffffff;
+  border-radius: 999px;
+  padding: 6px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+  align-items: center;
+}
+
+.role-switcher button {
+  border: none;
+  background: transparent;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #475569;
+  transition: background 160ms ease, color 160ms ease, transform 100ms ease;
+  outline: none;
+}
+
+.role-switcher button:hover {
+  transform: translateY(-1px);
+}
+
+.role-switcher button.active {
+  background: linear-gradient(180deg, #0ea5e9, #0369a1);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(3, 105, 161, 0.12);
+}
+
+/* Loading text */
+.container > p {
+  text-align: center;
+  color: #64748b;
+}
+
+/* Grid layout for cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+/* Card */
+.card {
+  background: #a1d3e9;
+  padding: 16px;
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.04);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.cards {
+  background: #a1d3e9;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.04);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+.card h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  color: #0f172a;
+}
+
+.desc {
+  font-size: 14px;
+  color: #374151;
+  margin: 6px 0;
+  min-height: 36px;
+}
+
+.meta {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 8px;
+}
+
+/* Small form card styles */
+.form {
+  display: block;
+}
+
+.form input,
+.form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #e6eef6;
+  background: #fbfdff;
+  font-size: 14px;
+  color: #0f172a;
+  resize: vertical;
+}
+
+.form textarea {
+  min-height: 70px;
+}
+
+/* Buttons */
+button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #0ea5e9;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.12);
+  transition: transform 100ms ease, opacity 120ms ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+button:disabled {
+  opacity: 0.64;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Danger button */
+button.danger {
+  background: linear-gradient(180deg, #ff7a7a, #ef4444);
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.12);
+}
+
+/* Controls inside card */
+.controls {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Student list inside card */
+.card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.card li {
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: #f8fafc;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #0f172a;
+}
+
+/* Tiny helper text */
+small,
+.hint {
+  display: block;
+  color: #90a4b8;
+  font-size: 12px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .container {
+    padding: 12px;
+    margin: 14px auto;
+  }
+  nav h1 {
+    font-size: 18px;
+  }
+  .role-switcher button {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+  .card {
+    padding: 12px;
+  }
+}
+
+/* Utilities */
+.center {
+  text-align: center;
+}
+.hidden {
+  display: none !important;
+}
